@@ -1,125 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Karelmr - Ciência de Dados e Matemática Aplicada</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f6f8;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(to right, #2d2d2d, #3f51b5);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-        nav {
-            margin-top: 1rem;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        main {
-            padding: 2rem 1rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        section {
-            margin-bottom: 2rem;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        h2 {
-            margin-top: 0;
-            color: #3f51b5;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #e0e0e0;
-            font-size: 0.9rem;
-        }
-        .button {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: #3f51b5;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Karelmr - Ciência de Dados e Matemática Aplicada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(to right, #2d2d2d, #3f51b5);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .repo {
+      background: white;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .repo a {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #3f51b5;
+      text-decoration: none;
+    }
+    footer {
+      background: #eee;
+      padding: 1rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Karelmr - Ciência de Dados e Matemática Aplicada</h1>
+  </header>
 
-    <header>
-        <h1>Karelmr - Ciência de Dados e Matemática Aplicada</h1>
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#exercicios">Exercícios</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+  <main>
+    <h2>Projetos do GitHub</h2>
+    <div id="repos">Carregando projetos...</div>
+  </main>
 
-    <main>
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Sou Karel Montero Rey, especialista em ciência de dados, matemática e física. Neste site compartilho conhecimentos, ideias e projetos voltados à aplicação de modelos analíticos em problemas reais.</p>
-        </section>
+  <footer>
+    © 2025 Karelmr. Todos os direitos reservados.
+  </footer>
 
-        <section id="projetos">
-            <h2>Projetos</h2>
-            <ul>
-                <li><strong>[Em breve]</strong> Projeto de previsão com séries temporais</li>
-                <li><strong>[Em breve]</strong> Classificação de padrões em dados financeiros</li>
-            </ul>
-        </section>
-
-        <section id="exercicios">
-            <h2>Exercícios Resolvidos</h2>
-            <ul>
-                <li><strong>Física:</strong> Movimento Uniformemente Variado</li>
-                <li><strong>Matemática:</strong> Integrais Definidas</li>
-            </ul>
-        </section>
-
-        <section id="servicos">
-            <h2>Serviços</h2>
-            <p>Ofereço consultoria em ciência de dados, análises estatísticas, visualizações interativas, modelagem matemática e apoio acadêmico em física e matemática aplicada.</p>
-            <p><a href="mailto:contato@karelmr.com" class="button">Solicitar orçamento</a></p>
-        </section>
-
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Conecte-se comigo no <a href="https://www.linkedin.com/in/karel-montero-rey" target="_blank">LinkedIn</a>.</p>
-            <p>GitHub: <a href="https://github.com/karelmr" target="_blank">github.com/karelmr</a></p>
-            <p><a href="#" class="button">Baixar CV</a></p>
-        </section>
-    </main>
-
-    <footer>
-        © 2025 Karelmr. Todos os direitos reservados.
-    </footer>
-
+  <script>
+    async function carregarRepos() {
+      const res = await fetch("https://api.github.com/users/karelmr/repos");
+      const repos = await res.json();
+      const container = document.getElementById("repos");
+      container.innerHTML = "";
+      repos.forEach(repo => {
+        if (!repo.private) {
+          const div = document.createElement("div");
+          div.className = "repo";
+          div.innerHTML = `
+            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+            <p>${repo.description || "Sem descrição"}</p>
+            <p><strong>Atualizado em:</strong> ${new Date(repo.updated_at).toLocaleDateString()}</p>
+          `;
+          container.appendChild(div);
+        }
+      });
+    }
+    carregarRepos();
+  </script>
 </body>
 </html>
