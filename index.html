@@ -4,16 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Karelmr - Ciência de Dados e Matemática Aplicada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; color: #333; }
-        header { background: #222; color: white; padding: 20px; }
-        nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
-        section { margin-top: 40px; }
-        h2 { color: #444; }
-        a { color: #1a0dab; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #2d2d2d, #3f51b5);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            margin-top: 1rem;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        main {
+            padding: 2rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        h2 {
+            margin-top: 0;
+            color: #3f51b5;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #e0e0e0;
+            font-size: 0.9rem;
+        }
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #3f51b5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Karelmr - Ciência de Dados e Matemática Aplicada</h1>
         <nav>
@@ -25,34 +81,45 @@
         </nav>
     </header>
 
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <p>Sou Karel Montero Rey, especialista em ciência de dados, matemática e física. Neste site compartilho conhecimentos, ideias e projetos voltados à aplicação de modelos analíticos em problemas reais.</p>
-    </section>
+    <main>
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Sou Karel Montero Rey, especialista em ciência de dados, matemática e física. Neste site compartilho conhecimentos, ideias e projetos voltados à aplicação de modelos analíticos em problemas reais.</p>
+        </section>
 
-    <section id="projetos">
-        <h2>Projetos</h2>
-        <ul>
-            <li><a href="#">[Em breve] Projeto de previsão com séries temporais</a></li>
-        </ul>
-    </section>
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <ul>
+                <li><strong>[Em breve]</strong> Projeto de previsão com séries temporais</li>
+                <li><strong>[Em breve]</strong> Classificação de padrões em dados financeiros</li>
+            </ul>
+        </section>
 
-    <section id="exercicios">
-        <h2>Exercícios Resolvidos</h2>
-        <ul>
-            <li><a href="#">Física - Movimento Uniformemente Variado</a></li>
-            <li><a href="#">Matemática - Integrais Definidas</a></li>
-        </ul>
-    </section>
+        <section id="exercicios">
+            <h2>Exercícios Resolvidos</h2>
+            <ul>
+                <li><strong>Física:</strong> Movimento Uniformemente Variado</li>
+                <li><strong>Matemática:</strong> Integrais Definidas</li>
+            </ul>
+        </section>
 
-    <section id="servicos">
-        <h2>Serviços</h2>
-        <p>Ofereço consultoria e apoio em projetos de ciência de dados, matemática aplicada e física. Entre em contato para saber mais.</p>
-    </section>
+        <section id="servicos">
+            <h2>Serviços</h2>
+            <p>Ofereço consultoria em ciência de dados, análises estatísticas, visualizações interativas, modelagem matemática e apoio acadêmico em física e matemática aplicada.</p>
+            <p><a href="mailto:contato@karelmr.com" class="button">Solicitar orçamento</a></p>
+        </section>
 
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/karel-montero-rey" target="_blank">Karel Montero Rey</a></p>
-    </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Conecte-se comigo no <a href="https://www.linkedin.com/in/karel-montero-rey" target="_blank">LinkedIn</a>.</p>
+            <p>GitHub: <a href="https://github.com/karelmr" target="_blank">github.com/karelmr</a></p>
+            <p><a href="#" class="button">Baixar CV</a></p>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 Karelmr. Todos os direitos reservados.
+    </footer>
+
 </body>
 </html>
