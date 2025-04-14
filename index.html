@@ -17,17 +17,36 @@
       padding: 2rem;
       text-align: center;
     }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
     main {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
-    .repo {
+    section {
+      margin-bottom: 2rem;
       background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #3f51b5;
+    }
+    .repo {
+      background: #fdfdfd;
       margin-bottom: 1rem;
       padding: 1rem;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     .repo a {
       font-size: 1.2rem;
@@ -45,11 +64,45 @@
 <body>
   <header>
     <h1>Karelmr - Ciência de Dados e Matemática Aplicada</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#exercicios">Exercícios</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
   <main>
-    <h2>Projetos do GitHub</h2>
-    <div id="repos">Carregando projetos...</div>
+    <section id="sobre">
+      <h2>Sobre Mim</h2>
+      <p>Sou Karel Montero Rey, especialista em ciência de dados, matemática e física. Neste site compartilho conhecimentos, ideias e projetos voltados à aplicação de modelos analíticos em problemas reais.</p>
+    </section>
+
+    <section id="projetos">
+      <h2>Projetos no GitHub</h2>
+      <div id="repos">Carregando projetos...</div>
+    </section>
+
+    <section id="exercicios">
+      <h2>Exercícios Resolvidos</h2>
+      <ul>
+        <li>Física: Movimento Uniformemente Variado</li>
+        <li>Matemática: Integrais Definidas</li>
+        <li>Ciência de Dados: Regressão Linear com Python</li>
+      </ul>
+    </section>
+
+    <section id="servicos">
+      <h2>Serviços</h2>
+      <p>Consultoria em ciência de dados, análises estatísticas, modelagem matemática, desenvolvimento de algoritmos personalizados e apoio acadêmico.</p>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/karel-montero-rey" target="_blank">Karel Montero Rey</a></p>
+      <p>GitHub: <a href="https://github.com/karelmr" target="_blank">github.com/karelmr</a></p>
+    </section>
   </main>
 
   <footer>
